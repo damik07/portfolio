@@ -20,7 +20,8 @@ public class PortfolioApplication {
                 public void addCorsMappings(CorsRegistry registry){
                     registry.addMapping("/**")
                     .allowedMethods("*")
-                    .allowedOrigins("*");
+                    .allowedOrigins("*")
+                    ;
         
                 }
             };

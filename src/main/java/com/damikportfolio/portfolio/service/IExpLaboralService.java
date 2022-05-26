@@ -14,5 +14,6 @@ public interface IExpLaboralService {
     public void crearExpLaboral (ExpLaboral expLab);
     public void borrarExpLaboral (Long id);
     public ExpLaboral buscarExpLaboral (Long id);
+    public void actualizarExpLaboral (ExpLaboral expLab, Long id);
     
 }

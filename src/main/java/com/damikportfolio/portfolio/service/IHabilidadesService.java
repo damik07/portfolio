@@ -14,5 +14,5 @@ public interface IHabilidadesService {
     public void crearHabilidades (Habilidades habil);
     public void borrarHabilidades (Long id);
     public Habilidades buscarHabilidades (Long id);
-    
+    public void actualizarHabilidades (Habilidades habil, Long id);
 }

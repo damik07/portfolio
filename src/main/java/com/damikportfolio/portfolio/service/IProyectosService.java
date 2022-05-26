@@ -14,5 +14,6 @@ public interface IProyectosService {
     public void crearProyecto (Proyectos proy);
     public void borrarProyecto (Long id);
     public Proyectos buscarProyecto (Long id);
+    public void actualizarProyecto (Proyectos proy, Long id);
     
 }

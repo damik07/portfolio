@@ -47,13 +47,16 @@ public class ControllerUsu {
     
     @PostMapping ("/usuario/Ok")
     @ResponseBody
-    @SuppressWarnings("deprecation")
-    public boolean usuarioOk (Usuario usu){
+    
+    public boolean usuarioOk (@RequestBody Usuario usu){
         Argon2 argon2 = Argon2Factory.create(Argon2Factory.Argon2Types.ARGON2id);
         List<Usuario> usuarios = usuServ.verUsuarios();
-        System.out.print(usu);
+        
         for (Usuario x:usuarios){
-            System.out.print(x);
+            if((argon2.verify(x.getPassword(), usu.getPassword()))&&(x.getUsuario().equals(usu.getUsuario())) ){
+                x.setValido(true);
+                return true;
+            }
             
         }
         return false;

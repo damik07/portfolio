@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.damikportfolio.portfolio.service.IPersonaService;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PutMapping;
 
 
 
@@ -42,6 +43,11 @@ public class Controller {
     @DeleteMapping ("/delete/{id}")
     public void borrarPersona (@PathVariable Long id){
         persoServ.borrarPersona(id);
+    }
+    
+    @PutMapping ("actualizar/persona/{id}")
+    public void actualizarPersona (@RequestBody Persona pers, @PathVariable Long id){
+        this.persoServ.actualizarPersona(pers, id);
     }
     
     
