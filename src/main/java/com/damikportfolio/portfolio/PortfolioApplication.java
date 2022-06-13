@@ -21,6 +21,7 @@ public class PortfolioApplication {
                     registry.addMapping("/**")
                     .allowedMethods("*")
                     .allowedOrigins("*")
+                    .allowedHeaders("*")
                     ;
         
                 }

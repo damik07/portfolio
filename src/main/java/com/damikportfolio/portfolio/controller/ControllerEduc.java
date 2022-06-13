@@ -9,6 +9,7 @@ import com.damikportfolio.portfolio.model.Educacion;
 import com.damikportfolio.portfolio.service.IEducacionService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,10 +26,12 @@ public class ControllerEduc {
     private IEducacionService educServ;
     
     //este método se puede usar tanto para agregar como para editar información
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping ("/new/educacion")
     public void agregarEducacion (@RequestBody Educacion edu){
         educServ.crearEducacion(edu);
     }
+    
     
     @GetMapping ("/ver/educacion")
     @ResponseBody
@@ -36,11 +39,13 @@ public class ControllerEduc {
         return educServ.verEducacion();
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping ("/delete/educacion/{id}")
     public void borrarEducacion (@PathVariable Long id){
         educServ.borrarEducacion(id);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping ("actualizar/educacion/{id}")
     public void actualizarEducacion (@RequestBody Educacion educ, @PathVariable Long id){
         this.educServ.actualizarEducacion(educ, id);

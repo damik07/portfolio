@@ -6,17 +6,17 @@
 package com.damikportfolio.portfolio.service;
 
 import com.damikportfolio.portfolio.model.Usuario;
-import com.damikportfolio.portfolio.repository.UsuarioRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.damikportfolio.portfolio.repository.UsuRepository;
 
 
 @Service
-public class UsuarioService implements IUsuarioService{
+public class UsuarioServ implements IUsuarioService{
     
     @Autowired
-    public UsuarioRepository usuRepo;
+    public UsuRepository usuRepo;
 
     @Override
     public List<Usuario> verUsuarios() {

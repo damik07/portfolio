@@ -48,8 +48,8 @@ public class ExpLaboralService implements IExpLaboralService{
         if(!(expLab.getNombre() == null)) {exp.setNombre(expLab.getNombre());}
         if(!(expLab.getPosicion() == null)) {exp.setPosicion(expLab.getPosicion());}
         if(!(expLab.getDescripcion() == null)) {exp.setDescripcion(expLab.getDescripcion());}
-        if(!(expLab.getAño_desde() == null)) {exp.setAño_desde(expLab.getAño_desde());}
-        if(!(expLab.getAño_hasta() == null)) {exp.setAño_hasta(expLab.getAño_hasta());}
+        if(!(expLab.getAnioDesde() == null)) {exp.setAnioDesde(expLab.getAnioDesde());}
+        if(!(expLab.getAnioHasta() == null)) {exp.setAnioHasta(expLab.getAnioHasta());}
         if(!(expLab.getImg() == null)) {exp.setImg(expLab.getImg());}
         
         this.expLabRepo.save(exp);

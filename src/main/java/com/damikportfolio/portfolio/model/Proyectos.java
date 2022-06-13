@@ -5,6 +5,7 @@
  */
 package com.damikportfolio.portfolio.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,6 +22,7 @@ public class Proyectos {
     private Long id;
     private String nombre;
     private String fecha;
+    @Column(name = "descripcion", columnDefinition="TEXT")
     private String descripcion;
     private String img;
     private String link;
