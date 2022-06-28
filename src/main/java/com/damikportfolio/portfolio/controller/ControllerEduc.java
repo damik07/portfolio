@@ -33,7 +33,7 @@ public class ControllerEduc {
     }
     
     
-    @GetMapping ("/ver/educacion")
+    @GetMapping ("/auth/ver/educacion")
     @ResponseBody
     public List<Educacion> verEducacion () {
         return educServ.verEducacion();

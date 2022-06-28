@@ -6,6 +6,7 @@ package com.damikportfolio.portfolio.token.service;
 
 import com.damikportfolio.portfolio.token.entity.Usuarioo;
 import com.damikportfolio.portfolio.token.repository.UsuarioRepository;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class UsuarioService {
+public class UsuarioService implements IUsuService{
     
     @Autowired
     UsuarioRepository usuarioRepository;
@@ -33,6 +34,36 @@ public class UsuarioService {
     public void save(Usuarioo usuario){
         usuarioRepository.save(usuario);
     }
+    
+    
+    /*public List<Usuarioo> verUsus() {
+        return usuarioRepository.findAll();
+    }
+    
+    public void borrarUsus(Integer id) {
+        usuarioRepository.deleteById(id);
+    }
+    
+    public Usuarioo buscarUsu(Integer id) {
+        return usuarioRepository.findById(id).orElse(null);
+    }*/
+
+    @Override
+    public List<Usuarioo> verUsus() {
+        return usuarioRepository.findAll();
+    }
+
+    @Override
+    public void borrarUsu(Integer id) {
+        usuarioRepository.deleteById(id);
+    }
+
+    @Override
+    public Usuarioo buscarUsu(Integer id) {
+        return usuarioRepository.findById(id).orElse(null);
+    }
+    
+    
     
     
 }

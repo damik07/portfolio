@@ -6,6 +6,7 @@ package com.damikportfolio.portfolio.token.repository;
 
 
 import com.damikportfolio.portfolio.token.entity.Usuarioo;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -15,6 +16,10 @@ public interface UsuarioRepository extends JpaRepository<Usuarioo, Integer>{
     Optional<Usuarioo> findByNombreUsuario(String nombreUsuario);
     boolean existsByNombreUsuario(String nombreUsuario);
     boolean existsByEmail(String email);
+    
+    /*List<Usuarioo> verUsus();
+    void borrarUsus(Integer id);
+    Usuarioo buscarUsu(Integer id);*/
     
     
 }

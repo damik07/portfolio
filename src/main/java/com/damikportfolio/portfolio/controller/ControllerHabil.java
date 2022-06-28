@@ -30,7 +30,7 @@ public class ControllerHabil {
         habilServ.crearHabilidades(habil);
     }
     
-    @GetMapping ("/ver/habilidades")
+    @GetMapping ("/auth/ver/habilidades")
     @ResponseBody
     public List<Habilidades> verHabilidades () {
         return habilServ.verHabilidades();

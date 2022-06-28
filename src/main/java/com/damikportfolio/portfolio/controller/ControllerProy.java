@@ -30,7 +30,7 @@ public class ControllerProy {
         proyServ.crearProyecto(proy);
     }
     
-    @GetMapping ("/ver/proyectos")
+    @GetMapping ("/auth/ver/proyectos")
     @ResponseBody
     public List<Proyectos> verProyectos () {
         return proyServ.verProyectos();

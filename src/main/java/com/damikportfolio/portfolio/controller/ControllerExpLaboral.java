@@ -30,7 +30,7 @@ public class ControllerExpLaboral {
         expLabServ.crearExpLaboral(exp);
     }
     
-    @GetMapping ("/ver/expLaboral")
+    @GetMapping ("/auth/ver/expLaboral")
     @ResponseBody
     public List<ExpLaboral> verExpLaboral () {
         return expLabServ.verExpLaboral();

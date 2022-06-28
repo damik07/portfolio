@@ -4,12 +4,18 @@
  */
 package com.damikportfolio.portfolio.token.dto;
 
+import javax.validation.constraints.NotBlank;
+
 
 public class LoginUsuario {
     
+    @NotBlank
     private String nombreUsuario;
-    /*@notBlank faltan las dependencias de esta anotación y de notBlank*/
-   
+    
+    @NotBlank
+    private String email;
+    
+    @NotBlank
     private String password;
 
     public String getNombreUsuario() {
@@ -26,6 +32,14 @@ public class LoginUsuario {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
     
     
